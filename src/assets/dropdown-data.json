@@ -1,0 +1,15 @@
+{
+    "data": [{
+            "DISPLAY_VAL": "ADDRCHG",
+            "ALERT_TYPE_ID": 551203
+        },
+        {
+            "DISPLAY_VAL": "DLTRD",
+            "ALERT_TYPE_ID": 551205
+        },
+        {
+            "DISPLAY_VAL": "EML",
+            "ALERT_TYPE_ID": 551204
+        }
+    ]
+}
