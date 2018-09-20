@@ -1,6 +1,27 @@
 {
     "data": [{
+        "ALERT_TYPE_ID": 551203,
         "MIN_LEN": 9,
-        "ALERT_TYPE_ID": 551203
+        "SRC_TYPE": "flat",
+        "DOMAIN": "CUST_N",
+        "SRC_DESC": null,
+        "INDEX_TYPE_ID": 0,
+        "COLUMN_NAME": "CUSTOMER_NO",
+        "IS_UNIQUE": 1,
+        "COLUMN_ID": 5,
+        "IS_FUTURE_ALLOWED": 0,
+        "COL_ORD": 1,
+        "IS_PAST_ALLOWED": 0,
+        "MAX_VALUE": 0,
+        "MIN_VALUE": 0,
+        "DATA_TYPE_NAME": "text",
+        "SRC_NAME": "TABLE_CUSTOMERS",
+        "SRC_FILE_NAME": "/frdmon/xfer/provider1/addchg/customer.txt",
+        "SRC_ID": 2,
+        "COLUMN_DESC": "Customer Number",
+        "MAX_LEN": 9,
+        "SRC_COUNT": 0,
+        "SRC_DELIM": "X09",
+        "IS_MANDATORY": 1
     }]
 }

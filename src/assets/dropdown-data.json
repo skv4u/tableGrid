@@ -1,15 +1,22 @@
 {
     "data": [{
             "DISPLAY_VAL": "ADDRCHG",
-            "ALERT_TYPE_ID": 551203
+            "ALERT_TYPE_ID": 551203,
+            "VERSION": 1.0,
+            "APP_ID": "FIU"
+
         },
         {
             "DISPLAY_VAL": "DLTRD",
-            "ALERT_TYPE_ID": 551205
+            "ALERT_TYPE_ID": 551205,
+            "VERSION": 1.1,
+            "APP_ID": "FIU"
         },
         {
             "DISPLAY_VAL": "EML",
-            "ALERT_TYPE_ID": 551204
+            "ALERT_TYPE_ID": 551204,
+            "VERSION": 1.2,
+            "APP_ID": "FIU"
         }
     ]
 }
