@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
+import { ConfigurationMicroService } from 'app/shared/configuration-micro.service';
 //Route Paths
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -28,7 +29,7 @@ const routes: Routes = [
     HttpModule
   ],
   exports: [RouterModule],
-
+  providers: [ConfigurationMicroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,105 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Example select</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+            <div class="custom-card">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Sub Type</label>
+                    <select class="form-control" [(ngModel)]="subtype" (change)="addSelectedDropdown()">
+                        <option *ngFor="let m of dropdownList" [value]="m.ALERT_TYPE_ID">{{m.DISPLAY_VAL}}</option>
+                    </select>
+                </div>
             </div>
         </div>
+        <div class="col-6">
+            <div class="custom-card">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>ALERT_TYPE_ID</th>
+                            <th>VERSION</th>
+                            <th>APP_ID</th>
+                        </tr>
+                        <tr *ngIf="selectedHeader">
+                            <td>{{selectedHeader.ALERT_TYPE_ID}}</td>
+                            <td>{{selectedHeader.VERSION}}</td>
+                            <td>{{selectedHeader.APP_ID}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="row">
+        <div class="custom-card">
+            <div class="col-12">
+                <blockquote class="blockquote">
+                    <footer class="blockquote-footer">
+                        <span>NAME : Customer | DELIMETER : x7e | APPROX.ROW : 100 | FILE NAME : Customer.txt</span>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Heading1</th>
+                            <th>Heading1</th>
+                            <th>Heading1</th>
+                        </tr>
+                        <tr>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                        </tr>
+                        <tr>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                        </tr>
+                        <tr>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                        </tr>
+                        <tr>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="custom-card">
+            <div class="col-12">
+                <blockquote class="blockquote">
+                    <footer class="blockquote-footer">
+                        <span>NAME : Customer | DELIMETER : x7e | APPROX.ROW : 100 | FILE NAME : Customer.txt</span>
+                    </footer>
+                </blockquote>
+            </div>
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Heading1</th>
+                            <th>Heading1</th>
+                            <th>Heading1</th>
+                        </tr>
+                        <tr>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                            <td>Heading1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 
 </div>
