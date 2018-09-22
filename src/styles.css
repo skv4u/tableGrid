@@ -4,6 +4,7 @@
 @import "~font-awesome/css/font-awesome.css";
 body {
     background: #f8f8f8;
+    font-size: 13px;
 }
 
 .container {
@@ -66,4 +67,12 @@ body {
 .table td,
 .table th {
     padding: 5px;
+}
+
+.blockquote {
+    font-size: 14px;
+}
+
+select.form-control {
+    font-size: 12px;
 }

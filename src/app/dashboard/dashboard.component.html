@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-4">
+        <div class="col-4" style="padding: 0;">
             <div class="custom-card">
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Sub Type</label>
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-8">
             <div class="custom-card">
                 <table class="table table-bordered">
                     <tbody>
@@ -29,77 +29,70 @@
             </div>
 
         </div>
-
-
-
     </div>
-    <div class="row">
-        <div class="custom-card">
+
+    <div class="row" *ngIf="IsListVisible && dataList.length > 0">
+        <div class="custom-card" style="width:98.4%" *ngFor="let data of dataList">
             <div class="col-12">
                 <blockquote class="blockquote">
                     <footer class="blockquote-footer">
-                        <span>NAME : Customer | DELIMETER : x7e | APPROX.ROW : 100 | FILE NAME : Customer.txt</span>
+                        <span>
+                            <b>Name</b> : {{data.header.NAME}} | 
+                            <b>DELIMETER</b> : {{data.header.DELIMETER}} | 
+                            <b>APPROX.ROW</b> : {{data.header.APPROX_ROW}} | 
+                            <b>FILE NAME</b> : {{data.header.FILENAME}}</span>
                     </footer>
                 </blockquote>
             </div>
-            <div class="col-12">
+            <div class="col-12 table-responsive">
                 <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <th>Heading1</th>
-                            <th>Heading1</th>
-                            <th>Heading1</th>
+                            <th width="70px"></th>
+                            <th>ID</th>
+                            <th>TYPE</th>
+                            <th>REQUIRED</th>
+                            <th>NAME</th>
+                            <th>UNIQUE</th>
+                            <th>DOMAIN</th>
+                            <th>DESCRIPTION</th>
+                            <th>MIN_LENGTH</th>
+                            <th>MAX_LENGHT</th>
+                            <th>FUTURE_ALLOWED</th>
+                            <th>PAST_ALLOWED</th>
+                            <th>ORDER</th>
                         </tr>
-                        <tr>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
+                        <tr *ngFor="let m of data.body">
+                            <td>
+                                <button class="edit" (click)="editMode(m)"><i class="fa fa-edit"></i></button>
+                                <button class="delete"><i class="fa fa-trash"></i></button>
+                            </td>
+                            <td>{{m.ID}}</td>
+                            <td>{{m.TYPE}}</td>
+                            <td>{{m.REQUIRED}}</td>
+                            <td>{{m.NAME}}</td>
+                            <td>{{m.UNIQUE}}</td>
+                            <td>{{m.DOMAIN}}</td>
+                            <td>{{m.DESCRIPTION}}</td>
+                            <td>{{m.MIN_LENGTH}}</td>
+                            <td>{{m.MAX_LENGTH}}</td>
+                            <td>{{m.FUTURE_ALLOWED}}</td>
+                            <td>{{m.PAST_ALLOWED}}</td>
+                            <td>{{m.ORDER}}</td>
                         </tr>
-                        <tr>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                        </tr>
-                        <tr>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                        </tr>
-                        <tr>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="custom-card">
-            <div class="col-12">
-                <blockquote class="blockquote">
-                    <footer class="blockquote-footer">
-                        <span>NAME : Customer | DELIMETER : x7e | APPROX.ROW : 100 | FILE NAME : Customer.txt</span>
-                    </footer>
-                </blockquote>
-            </div>
-            <div class="col-12">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <th>Heading1</th>
-                            <th>Heading1</th>
-                            <th>Heading1</th>
-                        </tr>
-                        <tr>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                            <td>Heading1</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
-
+    <div class="row" *ngIf="IsEditVisible">
+        <div class="custom-card" style="width:98.4%">
+            Edit mode
+        </div>
+        <div class="custom-card" style="width:98.4%; text-align:right;">
+            <button class="btn" (click)="back()">Back</button>&nbsp;&nbsp;
+            <button class="btn btn-primary" (click)="IsEditVisible=false;IsListVisible=true">Save</button>
+        </div>
+    </div>
 </div>

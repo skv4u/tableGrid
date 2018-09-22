@@ -1,0 +1,13 @@
+table button.edit {
+    background: #ffffff;
+    border: 1px solid #a8c0dc;
+    color: #0077ff;
+    cursor: pointer;
+}
+
+table button.delete {
+    background: #ffffff;
+    border: 1px solid #f5baba;
+    color: #fc190d;
+    cursor: pointer;
+}

@@ -3,20 +3,20 @@
             "DISPLAY_VAL": "ADDRCHG",
             "ALERT_TYPE_ID": 551203,
             "VERSION": 1.0,
-            "APP_ID": "FIU"
+            "APP_ID": "101"
 
         },
         {
             "DISPLAY_VAL": "DLTRD",
             "ALERT_TYPE_ID": 551205,
             "VERSION": 1.1,
-            "APP_ID": "FIU"
+            "APP_ID": "201"
         },
         {
             "DISPLAY_VAL": "EML",
             "ALERT_TYPE_ID": 551204,
             "VERSION": 1.2,
-            "APP_ID": "FIU"
+            "APP_ID": "301"
         }
     ]
 }
