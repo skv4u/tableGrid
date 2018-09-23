@@ -1,11 +1,11 @@
 {
     "data": [{
+            "INDEX_TYPE_ID": 1,
             "ALERT_TYPE_ID": 551203,
             "MIN_LEN": 9,
             "SRC_TYPE": "flat",
             "DOMAIN": "CUST_N",
             "SRC_DESC": null,
-            "INDEX_TYPE_ID": 1,
             "COLUMN_NAME": "CUSTOMER_NO",
             "IS_UNIQUE": 1,
             "COLUMN_ID": 5,
@@ -26,12 +26,12 @@
             "APP_ID": "101"
         },
         {
+            "INDEX_TYPE_ID": 2,
             "ALERT_TYPE_ID": 551203,
             "MIN_LEN": 9,
             "SRC_TYPE": "flat",
             "DOMAIN": "CUST_EST_D",
             "SRC_DESC": null,
-            "INDEX_TYPE_ID": 2,
             "COLUMN_NAME": "ESTIMATED_DATE",
             "IS_UNIQUE": 0,
             "COLUMN_ID": 5,
@@ -52,12 +52,12 @@
             "APP_ID": "101"
         },
         {
+            "INDEX_TYPE_ID": 1,
             "ALERT_TYPE_ID": 551203,
             "MIN_LEN": 9,
             "SRC_TYPE": "flat",
             "DOMAIN": "TEXT",
             "SRC_DESC": null,
-            "INDEX_TYPE_ID": 3,
             "COLUMN_NAME": "CUSTOMER ADDRESS",
             "IS_UNIQUE": 0,
             "COLUMN_ID": 3,
@@ -78,12 +78,12 @@
             "APP_ID": "102"
         },
         {
+            "INDEX_TYPE_ID": 1,
             "ALERT_TYPE_ID": 551205,
             "MIN_LEN": 9,
             "SRC_TYPE": "flat",
             "DOMAIN": "CUST_EST_D",
             "SRC_DESC": null,
-            "INDEX_TYPE_ID": 2,
             "COLUMN_NAME": "ESTIMATED_DATE",
             "IS_UNIQUE": 0,
             "COLUMN_ID": 5,

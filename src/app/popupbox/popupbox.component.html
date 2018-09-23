@@ -1,0 +1,17 @@
+<div class="background-grey"></div>
+<div class="popup-box" *ngIf="type=='success'">
+    <img src="./assets/images/success.png">
+
+    <div style="margin-top:15px">{{message}}</div>
+    <div>
+        <button class="popup-button" (click)="backParent()">OK</button>
+    </div>
+</div>
+
+<div class="popup-box" *ngIf="type=='confirm'">
+    <div style="margin-top:15px">{{message}}</div>
+    <div>
+        <button class="btn btn-primary confirm-button" (click)="backParent(true)">Yes</button>
+        <button class="btn confirm-button" (click)="backParent(false)">No</button>
+    </div>
+</div>

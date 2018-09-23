@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from 'app/dashboard/dashboard.component';
 import { ConfigurationMicroService } from 'app/shared/configuration-micro.service';
+import { PopupboxComponent } from 'app/popupbox/popupbox.component';
 //Route Paths
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    PopupboxComponent
   ],
   imports: [
     BrowserModule,

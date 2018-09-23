@@ -76,3 +76,7 @@ body {
 select.form-control {
     font-size: 12px;
 }
+
+button {
+    cursor: pointer;
+}

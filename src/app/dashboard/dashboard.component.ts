@@ -16,8 +16,14 @@ export class DashboardComponent implements OnInit {
   selectedHeader: any;
   IsListVisible:boolean = true;
   IsEditVisible:boolean = false;
+  row:any = {};
+  popupVisibility: boolean = false;  
+  responseMessage:string = "Data saved successfully";
+  boxtype='success';
   ngOnInit() {
     this.listJson(true);
+    // this.IsListVisible = false;
+    // this.IsEditVisible = true;
   }
 
   listJson(single?: boolean) {
@@ -79,7 +85,7 @@ export class DashboardComponent implements OnInit {
   }
   pushRelatedData(id: number, APP_ID:any, data: any) {
     let list: any[] = [];
-    console.log(id,APP_ID)
+    // console.log(id,APP_ID)
     for (let m of data) {
       if (m.ALERT_TYPE_ID == id && m.APP_ID==APP_ID) {
         list.push({
@@ -95,7 +101,8 @@ export class DashboardComponent implements OnInit {
           "FUTURE_ALLOWED": m.IS_FUTURE_ALLOWED == 1,
           "PAST_ALLOWED":m.IS_PAST_ALLOWED ==1,
           "ORDER":m.COL_ORD,
-          "ALERT_TYPE_ID":m.ALERT_TYPE_ID
+          "ALERT_TYPE_ID":m.ALERT_TYPE_ID,
+          "APP_ID":m.APP_ID
         })
       }
     }
@@ -126,6 +133,47 @@ export class DashboardComponent implements OnInit {
   editMode(data:any){
     this.IsListVisible = false;
     this.IsEditVisible = true;
-    console.log(data);
+    
+    this.row = data;
+    console.log(this.row)
+  }
+  updateRow(){
+    // this.IsListVisible = false;
+    // this.IsEditVisible = true;
+    this.boxtype = 'success';
+    this.responseMessage = 'Data saved successfully';
+    this.popupVisibility  =true;
+  }
+  backtoNextPage(data:any){
+    if(this.boxtype == 'success'){
+      this.popupVisibility = false;
+    } else if(this.boxtype == 'confirm'){
+      if(data){
+        for(let m of this.dataList){
+          m.body = m.body.filter((sub)=>{
+            // console.log(sub);
+            return !(sub.ALERT_TYPE_ID == this.row.ALERT_TYPE_ID && sub.ID == this.row.ID && sub.APP_ID == this.row.APP_ID)
+          })
+        }
+        this.popupVisibility = false;
+        
+        setTimeout(()=>{
+          this.boxtype = 'success';
+          this.responseMessage = 'Deleted successfully';
+          this.popupVisibility  =true;
+        },100);
+      }
+      else {
+        this.popupVisibility = false;
+      }
+    }
+  }
+  deleteRow(data:any){
+    this.row = data;
+    this.boxtype = 'confirm';
+    this.responseMessage = 'Are you sure want to delete ?';
+    this.popupVisibility = true;
+
+
   }
 }

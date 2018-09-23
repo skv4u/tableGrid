@@ -65,7 +65,7 @@
                         <tr *ngFor="let m of data.body">
                             <td>
                                 <button class="edit" (click)="editMode(m)"><i class="fa fa-edit"></i></button>
-                                <button class="delete"><i class="fa fa-trash"></i></button>
+                                <button class="delete" (click)="deleteRow(m)"><i class="fa fa-trash"></i></button>
                             </td>
                             <td>{{m.ID}}</td>
                             <td>{{m.TYPE}}</td>
@@ -88,11 +88,98 @@
     </div>
     <div class="row" *ngIf="IsEditVisible">
         <div class="custom-card" style="width:98.4%">
-            Edit mode
+            <!-- <form> -->
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">TYPE</label>
+                        <input type="text" class="form-control" [(ngModel)]="row.TYPE" id="exampleFormControlInput1" placeholder="TYPE">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput2">REQUIRED</label>
+                        <select class="form-control" id="exampleFormControlInput2" [(ngModel)]="row.REQUIRED">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput3">NAME</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3" [(ngModel)]="row.NAME" placeholder="NAME">
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput4">UNIQUE</label>
+                        <select class="form-control" id="exampleFormControlInput4" [(ngModel)]="row.UNIQUE">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                                        </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput5">DOMAIN</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput5" [(ngModel)]="row.DOMAIN" placeholder="DOMAIN">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput6">DESCRIPTION</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput6" [(ngModel)]="row.DESCRIPTION" placeholder="DESCRIPTION">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput7">MIN_LENGTH</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput7" [(ngModel)]="row.MIN_LENGTH" placeholder="MIN_LENGTH">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput171">MAX_LENGTH</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput171" [(ngModel)]="row.MAX_LENGTH" placeholder="MAX_LENGTH">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput8">FUTURE_ALLOWED</label>
+                        <select class="form-control" id="exampleFormControlInput8" [(ngModel)]="row.FUTURE_ALLOWED">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                                                </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput9">PAST_ALLOWED</label>
+                        <select class="form-control" id="exampleFormControlInput9" [(ngModel)]="row.PAST_ALLOWED">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                                                    </select>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput10">ORDER</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput10" [(ngModel)]="row.ORDER" placeholder="ORDER">
+                    </div>
+                </div>
+
+            </div>
+            <!-- </form> -->
         </div>
         <div class="custom-card" style="width:98.4%; text-align:right;">
             <button class="btn" (click)="back()">Back</button>&nbsp;&nbsp;
-            <button class="btn btn-primary" (click)="IsEditVisible=false;IsListVisible=true">Save</button>
+            <button class="btn btn-primary" (click)="updateRow()">Save</button>
         </div>
     </div>
 </div>
+
+<app-popupbox *ngIf="popupVisibility" (back)="backtoNextPage($event)" [message]="responseMessage" [type]="boxtype"></app-popupbox>
